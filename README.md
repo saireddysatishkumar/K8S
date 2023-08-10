@@ -1,15 +1,16 @@
 # K8S
-Project1:
+>Project1:
 To setup up the local environment using minikube.
 It consists of jenkins, ansible(awx)
-Project2:
 
-Project3:
+>Project2:
 
-Project4:
+>Project3:
 
-Project5:
+>Project4:
 
-Project2:
+>Project5:
+
+>Project2:
 
 
