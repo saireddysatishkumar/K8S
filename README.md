@@ -11,6 +11,6 @@ It consists of jenkins, ansible(awx)
 
 >Project5:
 
->Project2:
+>Project6:
 
 
