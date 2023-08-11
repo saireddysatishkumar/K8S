@@ -1,12 +1,7 @@
 # K8S
->Project1:
-To setup up the local environment using minikube.
-It consists of jenkins, ansible(awx)
-````
-Install minikube. Ref: https://minikube.sigs.k8s.io/docs/start/
-````
-
-
+>Project1: Setup up the AWX(ansible tower) local environment using minikube.
+ Project path: awx
+ 
 >Project2:
 
 >Project3:
