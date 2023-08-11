@@ -1,7 +1,7 @@
 # awx in minikube.
 Reference:
-https://minikube.sigs.k8s.io/docs/start/
-https://subscription.packtpub.com/book/cloud-and-networking/9781803244884/4/ch04lvl1sec17/installing-awx-on-minikube
+[a link](https://minikube.sigs.k8s.io/docs/start/)
+[a link](https://subscription.packtpub.com/book/cloud-and-networking/9781803244884/4/ch04lvl1sec17/installing-awx-on-minikube)
 
 >Step1) Install minikube.
 ````
