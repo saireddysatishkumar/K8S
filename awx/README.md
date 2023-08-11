@@ -1,7 +1,8 @@
 # awx in minikube(linux/mac).
 Reference:
-[minikube installation guide]: (https://minikube.sigs.k8s.io/docs/start/)
-[awx service setup in k8s(linux/mac) guide]: (https://subscription.packtpub.com/book/cloud-and-networking/9781803244884/4/ch04lvl1sec17/installing-awx-on-minikube)
+[minikube installation guide](https://minikube.sigs.k8s.io/docs/start/)  
+
+[awx service setup in k8s(linux/mac) guide](https://subscription.packtpub.com/book/cloud-and-networking/9781803244884/4/ch04lvl1sec17/installing-awx-on-minikube)
 
 >Step1) Install minikube.
 ````
