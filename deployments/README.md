@@ -1,4 +1,4 @@
-# Most Common Kubernetes Deployment Strategies (Examples & Code)
+# Kubernetes Deployment Strategies
 ## Prerequisite    
 a) Keep open 3 Terminals
 b) In Terminal 1, Start Minikube  
@@ -7,16 +7,16 @@ minikube start --driver=docker
 Note: It will take few mins to start
 ```
 c) In Terminal 2, Watch pods list and leave it for continuously monitoring pods. This will not show anything until you start with section 1.   
-```
+```bash
 watch -n 0.5 -t kubectl get pods -n default
 ```
 d) In Terminal 3, Run curl to check the deployed. This will not show anything until you start with section 1.  
-```
+```bash
 $ kubectl run curl --image=alpine/curl:8.2.1 -n kube-system -i --tty --rm -- sh
 Note: above command will launch into a curl pod/container. Then run following command
 for i in `seq 1 10`; do curl myapp.default:8181/version ;echo ""; sleep 1; done
 ```
-```
+```bash
 Note: During deployment, you can pause, resume, undo and restart using rollout command. It is kubernetes native tool.
 $ kubectl get deployments
 $ kubectl rollout undo  deployment myapp
@@ -31,13 +31,14 @@ Let us know about code/files in 1-rolling-update folder before proceeding
 2-deployment.yaml  - rolling update deployment with v2 myapp.
 3-service.yaml - service manifest which will just point to selector myapp. Above both files includes same selector label.
 ```
-```
+```bash
 step) In terminal 1:
 Run myapp deployment version v1 by executing following commands
 $cd 1-rolling-update   
-kubectl apply -f 1-deployment.yaml
+$kubectl apply -f 1-deployment.yaml
 Note: check terminal 2 for pods status. Once all pods are up, run the service.
-kubectl apply -f 3-service.yaml
+
+$ kubectl apply -f 3-service.yaml
 Note: Now monitor terminal 3. It will show myapp application version once service is up.
 It means application is deployed with version1. 
 ```
@@ -51,8 +52,10 @@ step) Now lets deploy version2 using rolling update. Check 2-deployment.yaml for
 In terminal 1:
 Run myapp deployment version v2 by executing following commands
 $cd 1-rolling-update   
-kubectl apply -f 2-deployment.yaml
+$kubectl apply -f 2-deployment.yaml
+
 Note: check terminal 2 for pods status. Slowly v1 deployment pods will be killed and v2 deployment pods get created.   
+
 Note: Now monitor terminal 3. It will show myapp application version once service is up.
 It means application is deployed with version2 automatically. At this moment there will be two replica sets but only one replica set will be up.
 ```
@@ -63,7 +66,7 @@ It means application is deployed with version2 automatically. At this moment the
 Let us know about code/files in  2-recreate folder before proceeding  
 1-deployment.yaml - recreate deployment with myapp.  All versions updated in same manifest file.
 ```
-```
+```bash
 step) In terminal 1:
 Run myapp deployment version v1 by executing following commands
 $cd 2-recreate   
@@ -72,7 +75,7 @@ Note: check terminal 2 for pods status.
 Note: Now monitor terminal 3. It will show myapp application version once service is up.
 It means application is deployed with version1. 
 ```
-```
+```bash
 step) In terminal 1:
 Update deployment version to v2 in same file and run deployment by executing following commands 
 kubectl apply -f 1-deployment.yaml
@@ -92,20 +95,22 @@ Let us know about code/files in 3-blue-green/native folder before proceeding
 3-service.yaml -  service manifest which will just point to myapp's matchLabel(blue/green).
 So during deployment both replicasets willbe available. Once deployment is done, all trafic will be routed to replicaset whcih is pointed in service manifest.
 ```
-```
+```bash
 step) In terminal 1:
 Run myapp deployment by executing following commands
 $cd 3-blue-green   
-kubectl apply -f native
+$ kubectl apply -f native
+
 Note: check terminal 2 for pods status.
 Note: Now monitor terminal 3. It will show myapp application version once service is up.
 It means application is deployed with version1. 
 ```
-```
+```bash
 step) In terminal 1:
 Update app's matchLabel(green) in service file and run deployment by executing following commands 
 $cd 3-blue-green   
-kubectl apply -f native
+$kubectl apply -f native
+
 Note: check terminal 2 for pods status.
 Note: Now monitor terminal 3. It will show myapp application version immediatly.
 It means application is deployed with version2. 
