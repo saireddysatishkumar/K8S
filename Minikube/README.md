@@ -2,8 +2,8 @@
 
 >Install minikube. [minikube installation guide](https://minikube.sigs.k8s.io/docs/start/) 
 ````
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
-sudo install minikube-darwin-amd64 /usr/local/bin/minikube
+$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+$ sudo install minikube-darwin-amd64 /usr/local/bin/minikube
 $ minikube start --extra-config=apiserver.service-node-port-range=1-65535 --cpus=4 --memory=6g --addons=ingress
 #set the alias:- alias kubectl="minikube kubectl --"
 $ minikube addons enable ingress
@@ -19,6 +19,9 @@ Request served by foo-app
 
 $ curl 127.0.0.1/bar
 Request served by bar-app
+
+$ minikube dashboard 
+To access minikube dashboard
 ...
 
 ````
