@@ -22,7 +22,7 @@ $ curl 127.0.0.1/bar
 Request served by bar-app
 ````
 
-To access minikube dashboard  
+>To access minikube dashboard  
 $ minikube dashboard 
 
 
