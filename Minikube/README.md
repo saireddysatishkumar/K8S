@@ -8,23 +8,24 @@ $ minikube start --extra-config=apiserver.service-node-port-range=1-65535 --cpus
 #set the alias:- alias kubectl="minikube kubectl --"
 $ minikube addons enable ingress
 $ minikube tunnel
+````
 
 > Deploy sample applications
+````
 kubectl apply -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml  
 
 >Now verify that the ingress works
 $ curl 127.0.0.1/foo
 Request served by foo-app
-...
 
 $ curl 127.0.0.1/bar
 Request served by bar-app
-
-$ minikube dashboard 
-To access minikube dashboard
-...
-
 ````
+
+To access minikube dashboard  
+$ minikube dashboard 
+
+
 <!--
 **saireddysatishkumar/saireddysatishkumar** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
