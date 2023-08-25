@@ -122,12 +122,15 @@ It means application is deployed with version2.
 > Deploy Prometheus (apply 2 times)
 
 ```bash
+export NAMESPACE=monitoring &&  echo $NAMESPACE
 kubectl apply --server-side -R -f monitoring/
 kubectl get service -n monitoring
 minikube service grafana -n monitoring --url
 # open url it shows. 
 ```
-
+```
+export LESSON=171 VER=v1 && ./build.sh
+```
 > Install Istio & Flagger
 
 ```bash
