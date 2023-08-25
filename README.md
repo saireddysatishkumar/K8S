@@ -5,7 +5,7 @@ Embark on a journey into the world of Kubernetes. Explore manifests, helm charts
 [minikube setup:](https://github.com/saireddysatishkumar/K8S/tree/main/Minikube)
 
 >Project2: Setup up the AWX(ansible tower) local environment using minikube.
- Project path: awx
+[Ansible Tower/AWX](https://github.com/saireddysatishkumar/K8S/tree/main/awx)
  
 >Project3: K8S deployment types explore in minikube.
  Project path: deployments
