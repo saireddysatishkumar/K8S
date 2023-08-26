@@ -8,7 +8,7 @@ Embark on a journey into the world of Kubernetes. Explore manifests, helm charts
 [Ansible Tower/AWX](https://github.com/saireddysatishkumar/K8S/tree/main/awx)
  
 >Project3: K8S deployment types explore in minikube.
- Project path: deployments
+[Learn Deployments] deployments
 
 >Project4:
 

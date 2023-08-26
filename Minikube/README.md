@@ -6,6 +6,8 @@ $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darw
 $ sudo install minikube-darwin-amd64 /usr/local/bin/minikube
 $ minikube start --extra-config=apiserver.service-node-port-range=1-65535 --cpus=4 --memory=6g --addons=ingress
 #set the alias:- alias kubectl="minikube kubectl --"
+# Go to minikube application > settings > advanced and select "User" then apply & restart.
+$ minikube addons enable metrics-server
 $ minikube addons enable ingress
 $ minikube tunnel
 ````
