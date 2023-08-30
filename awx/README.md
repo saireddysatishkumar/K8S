@@ -62,7 +62,9 @@ http://127.0.0.1:8010/#/login
 >Step5) To get the admin password, use the following command. username: admin
 ````
 kubectl --cluster awx get secret awx-demo-admin-password -o jsonpath="{.data.password}" | base64 –decode
- kubectl --cluster awx get secrets/awx-demo-admin-password -n awx  -o go-template='\n{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
+````
+````
+kubectl --cluster awx get secrets/awx-demo-admin-password -n awx  -o go-template='\n{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
 ````
 
 >Step6) To stop awx cluster
