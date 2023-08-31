@@ -4,7 +4,7 @@ from flask import Flask
 from prometheus_client import Histogram, generate_latest
 
 
-version = 'v3'
+version = 'v1'
 max_latency = 10
 error_rate = 0.05
 

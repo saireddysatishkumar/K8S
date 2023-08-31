@@ -4,7 +4,12 @@
 ````
 $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
 $ sudo install minikube-darwin-amd64 /usr/local/bin/minikube
-$ minikube start --extra-config=apiserver.service-node-port-range=1-65535 --cpus=4 --memory=6g --addons=ingress
+$ minikube start --output='text' --extra-config=apiserver.service-node-port-range=1-65535 --cpus=4 --memory=6g --addons=dashboard --addons=metrics-server --addons="ingress" --addons="ingress-dns"
+or
+$ minikube start --nodes 2 -p multinode-demo --extra-config=apiserver.service-node-port-range=1-65535 --cpus=4 --memory=6g --addons=dashboard --addons=metrics-server --addons="ingress" --addons="ingress-dns"
+# 3 Node cluster
+ubuntu@minikube-cluster:~$ minikube start -p minikube-demo --output='text' --nodes 3 --cpus='2' --disk-size='20000mb' --container-runtime='docker' --cni='calico' --cache-images=true --driver='docker' --force-systemd=true --extra-config=kubelet.cgroup-driver=systemd --wait-timeout=6m0s --delete-on-failure=false --auto-update-drivers=false --log_file=$HOME/minikube-start.log --addons=dashboard --addons=metrics-server --addons="ingress" --addons="ingress-dns"
+
 #set the alias:- alias kubectl="minikube kubectl --"
 # Go to minikube application > settings > advanced and select "User" then apply & restart.
 $ minikube addons enable metrics-server

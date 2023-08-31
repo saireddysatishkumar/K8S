@@ -4,7 +4,7 @@ set -x
 
 # setup default values, use environment variables to override
 # export USERNAMR=<containerRegistry> VER=v1 APP_DIR=myapp && ./build.sh
-#USERNAMR="${USERNAMR:-saireddysatishkumar}"
+USERNAMR="${USERNAMR:-saireddysatishkumar}"
 VER="${VER:-latest}"
 APP_DIR="${APP_DIR:-0}"
 DOCKERFILE="${DOCKERFILE:-Dockerfile}"

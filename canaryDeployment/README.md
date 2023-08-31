@@ -5,26 +5,38 @@ You can find tutorial [here](https://youtu.be/fWe6k4MmeSg).
 ## Start Minikube
 
 ```bash
-minikube start --driver=docker
+minikube start --nodes 2 -p multinode-demo --driver=docker
 ```
 
 ## Build application
 ```bash
+cd canaryDeployment
 # Run following command from automated-deployment folder(K8S).
 export USERNAMR=<containerRegistry> VER=v1 APP_DIR=myapp && ./build.sh
+# Update version in app.py to version = 'v2'
+export USERNAMR=<containerRegistry> VER=v2 APP_DIR=myapp && ./build.sh
+# Update version in app.py to version = 'v3'
+export USERNAMR=<containerRegistry> VER=v3 APP_DIR=myapp && ./build.sh
 ```
 
-## Deploy All Dependencies
-
+## Deploy All Dependencies promethius, grafana, istio.
 ```bash
 cd terraform
 terraform apply
 ```
 
+## Deploy myapp application.
+```bash
+cd canaryDeployment/
+kubectl apply -f manual  #For manual canary deploy
+
+kubectl apply -f automatic #For automatic canary deploy
+```
+
 ## Grafana & Promethius
 ```bash
 # username: admin, password: devops123
-kubectl port-forward svc/grafana 3000 -n monitoring
+kubectl port-forward svc/grafana 3001:3000 -n monitoring
 kubectl port-forward svc/prometheus-operated 9090 -n monitoring
 ```
 

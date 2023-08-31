@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: saireddysatishkumar/myapp:v2
+          image: saireddysatishkumar/myapp:v1
           imagePullPolicy: Always
           ports:
             - name: http
